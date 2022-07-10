@@ -33,7 +33,7 @@ Destrinchar um layout do Figma e convertê-lo em código, praticando a organiza�
 
 - [x] Dia 1 - Pegar um arquivo base do Figma e transformá-lo em componentes React
 - [x] Dia 2 - Adicionar uma biblioteca de CSS-in-JS para organizar os arquivos de estilo
-- [ ] Dia 3 - Utilização dos hooks do React
+- [x] Dia 3 - Utilização dos hooks do React
 - [ ] Dia 4 - Enviar informações para uma API de back-end
 - [ ] Dia 5 - Consumir uma API que dará informações sobre os produtos da loja
 - [ ] Dia 6 - Adicionar filtros e ordenação com hooks do React
