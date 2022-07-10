@@ -1,82 +1,46 @@
-# Example app with styled-components
+# 7Days_React
 
-This example features how you use a different styling solution than [styled-jsx](https://github.com/vercel/styled-jsx) that also supports universal styles. That means we can serve the required styles for the first render within the HTML and then load the rest in the client. In this case we are using [styled-components](https://github.com/styled-components/styled-components).
 
-This example uses the Rust-based [SWC](https://nextjs.org/docs/advanced-features/compiler#styled-components) in Next.js for better performance than Babel.
 
-Currently, only the `ssr` and `displayName` transforms have been implemented. These two transforms are the main requirement for using `styled-components` in Next.js.
+____
 
-## Deploy your own
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-styled-components)
+Repositório resultado do desafio [#7DaysOfCode da Alura](https://7daysofcode.io/)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-styled-components&project-name=with-styled-components&repository-name=with-styled-components)
+<br/>
 
-## How to use
+## Objetivo
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+Destrinchar um layout do Figma e convertê-lo em código, praticando a organização de arquivos CSS, conexão com APIs, e boas práticas de segurança ao trabalhar com API Keys e informações sensíveis.
 
-```bash
-npx create-next-app --example with-styled-components with-styled-components-app
-# or
-yarn create next-app --example with-styled-components with-styled-components-app
-# or
-pnpm create next-app --example with-styled-components with-styled-components-app
-```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
 
-### Try it on CodeSandbox
+## Layout
 
-[Open this example on CodeSandbox](https://codesandbox.io/s/github/vercel/next.js/tree/canary/examples/with-styled-components)
+![Layout](/prototipo.png)
 
-### Notes
+## Tecnologias aplicadas
 
-When wrapping a [Link](https://nextjs.org/docs/api-reference/next/link) from `next/link` within a styled-component, the [as](https://styled-components.com/docs/api#as-polymorphic-prop) prop provided by `styled` will collide with the Link's `as` prop and cause styled-components to throw an `Invalid tag` error. To avoid this, you can either use the recommended [forwardedAs](https://styled-components.com/docs/api#forwardedas-prop) prop from styled-components or use a different named prop to pass to a `styled` Link.
+| <div style="width: 150px">Nome</div> | Descrição|
+| :----- | :----- |
+| [Next.js](https://nextjs.org/) | Renderização híbrida estática e de servidor, suporte a TypeScript, agrupamento inteligente, pré-busca de rota e muito mais|
+| [React](https://pt-br.reactjs.org/) | Uma biblioteca JavaScript para criar interfaces de usuário|
+| [React-DOM](https://pt-br.reactjs.org/docs/react-dom.html) | Provê métodos específicos para o DOM que podem ser usados no nível superior de sua aplicação como uma válvula de escape para sair do modelo do React se você precisar|
+| [Styled-components](https://styled-components.com/) | Permite a escrita de CSS em JavaScript usando Tagged Templates Literals|
+| [Typescript](https://www.typescriptlang.org/) | Uma linguagem de programação de código aberto desenvolvida pela Microsoft; Um superconjunto sintático que adiciona tipagem estática opcional à linguagem JavaScript|
 
-<details>
-<summary>Click to expand workaround example</summary>
-<br />
+## Progresso
 
-**components/StyledLink.js**
+- [x] Dia 1 - Pegar um arquivo base do Figma e transformá-lo em componentes React
+- [x] Dia 2 - Adicionar uma biblioteca de CSS-in-JS para organizar os arquivos de estilo
+- [ ] Dia 3 - Utilização dos hooks do React
+- [ ] Dia 4 - Enviar informações para uma API de back-end
+- [ ] Dia 5 - Consumir uma API que dará informações sobre os produtos da loja
+- [ ] Dia 6 - Adicionar filtros e ordenação com hooks do React
+- [ ] Dia 7 - Publicar
 
-```javascript
-import Link from 'next/link'
-import styled from 'styled-components'
 
-const StyledLink = ({ as, children, className, href }) => (
-  <Link href={href} as={as} passHref>
-    <a className={className}>{children}</a>
-  </Link>
-)
+____
 
-export default styled(StyledLink)`
-  color: #0075e0;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
 
-  &:hover {
-    color: #40a9ff;
-  }
-
-  &:focus {
-    color: #40a9ff;
-    outline: none;
-    border: 0;
-  }
-`
-```
-
-**pages/index.js**
-
-```javascript
-import StyledLink from '../components/StyledLink'
-
-export default () => (
-  <StyledLink href="/post/[pid]" forwardedAs="/post/abc">
-    First post
-  </StyledLink>
-)
-```
-
-</details>
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/gladisonribeirodasilva)](https://www.linkedin.com/in/gladisonribeirodasilva) [![Gmail Badge](https://img.shields.io/badge/Gmail-D14836?style=flat-square&logo=gmail&logoColor=white&link=mailto:gladison.ti@gmail.com)](mailto:gladison.ti@gmail.com)
