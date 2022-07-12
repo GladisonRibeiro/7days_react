@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
 import { BodyText, Headline1, Headline4, Padding } from "../../tokens";
+import { EnviarEmailBoasVindas } from "../../usecases/EnviarEmailBoasVindas";
 import EmailForm from "../EmailForm";
 
 export default function AssinaturaNewsletter() {
 
   function onSubmit(email) {
-    console.log('onSubmit', email);
+    new EnviarEmailBoasVindas().execute(email);
   }
 
   return <>
