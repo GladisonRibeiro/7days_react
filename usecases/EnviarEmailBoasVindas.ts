@@ -12,7 +12,7 @@ export class EnviarEmailBoasVindas {
         emailjs_token,
         emailjs_welcome_template_id,
         emailjs_welcome_service_id
-      } } = await fetch('/api', { method: "get", headers: headers}).then(function(response) {
+      } } = await fetch('/api/secret', { method: "get", headers: headers}).then(function(response) {
         return response.json();
       });
       emailjs.init(emailjs_token);
