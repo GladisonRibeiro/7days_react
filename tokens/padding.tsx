@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-type PaddingSize = 8 | 12 | 16 | 24 | 32 | 37;
+type PaddingSize = 8 | 12 | 16 | 24 | 32 | 37 | 44 | 153;
 
 interface PaddingProps {
   size?: PaddingSize;
