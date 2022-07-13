@@ -1,8 +1,7 @@
-import styled from "styled-components";
-
-import { BodyText, Headline1, Headline4, Padding } from "../../tokens";
+import { Headline1, Headline4, Padding } from "../../tokens";
 import { EnviarEmailBoasVindas } from "../../usecases/EnviarEmailBoasVindas";
 import EmailForm from "../EmailForm";
+import { BoxWrapper, Description, ImageHero } from "./styles";
 
 export default function AssinaturaNewsletter() {
 
@@ -28,21 +27,3 @@ export default function AssinaturaNewsletter() {
   </>
 }
 
-const ImageHero = styled.img`
-  width: 787px;
-  height: 975px;
-  z-index: -1;
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  right: calc(50vw - 500px);
-`;
-
-const BoxWrapper = styled.div`
-  margin-top: 154px;
-  max-width: 585px;
-`;
-
-const Description = styled(BodyText)`
-  max-width: 481px;
-`;
