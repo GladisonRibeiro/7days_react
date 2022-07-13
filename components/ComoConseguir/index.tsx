@@ -12,6 +12,7 @@ export default function ComoConseguir() {
         </WrapperImage>
         <CardContent>
           <BodyText>Como conseguir</BodyText>
+          <Padding size={8}/>
           <Headline2>minha planta</Headline2>
           <Padding size={32}/>
           <Topic>Escolha suas plantas</Topic>
