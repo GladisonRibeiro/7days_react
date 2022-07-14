@@ -37,7 +37,7 @@ Destrinchar um layout do Figma e convertê-lo em código, praticando a organiza�
 - [x] Dia 4 - Enviar informações para uma API de back-end
 - [x] Dia 5 - Consumir uma API que dará informações sobre os produtos da loja
 - [x] Dia 6 - Adicionar filtros e ordenação com hooks do React
-- [ ] Dia 7 - Publicar
+- [x] Dia 7 - Publicar
 
 
 ____

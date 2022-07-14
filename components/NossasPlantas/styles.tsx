@@ -72,8 +72,15 @@ export const WrapperFiltro = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   width: 100%;
-  height: 45px;
+  height: 60px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+
+  @media(min-width: ${({theme}) => theme.breakpoints.phone}px) {
+    margin: 0%;
+  }
 `;
 
 export const SectionFiltro = styled.div`

@@ -19,20 +19,28 @@ type FiltroProps = {
 export default function NossasPlantas() {
   const [plantas, setPlantas] = useState(new Array<Planta>())
   const [plantasFiltradas, setPlantasFiltradas] = useState([])
-  const [filtroProps, setFiltroProps] = useState({} as FiltroProps);
+  const [filtroProps, setFiltroProps] = useState(null);
+
+  useEffect(() => {
+    if (plantas && plantas.length) {
+      const newFiltroProps = calcularPropsFiltro(plantas);
+      if (newFiltroProps) {
+        setFiltroProps(newFiltroProps);
+      }
+    }
+  }, [plantas]);
 
   useEffect(() => {
     obterPlantas();
-  }, []);
+  }, []);  
 
   async function obterPlantas() {
-    const plantas = await new ObterListaProdutos().execute();
-    setPlantas([...plantas]);
-    setPlantasFiltradas([...plantas]);
-    setFiltroProps(calcularPropsFiltro(plantas));
+    const newPlantas = await new ObterListaProdutos().execute();
+    setPlantas([...newPlantas]);
+    setPlantasFiltradas([...newPlantas]);
   }
 
-  function calcularPropsFiltro(plantas: any[]) : FiltroProps {
+  const calcularPropsFiltro = (plantas: any[]) : FiltroProps => {
     const valores = plantas.map(planta => planta.preco);
     const min = Math.min(...valores);
     const max = Math.max(...valores);
@@ -43,7 +51,7 @@ export default function NossasPlantas() {
       value: max,
       step: 1,
       onFilter: filtrarPlantasPorValor(),
-      onOrder: ordernarPlantas,
+      onOrder: (ordem) => ordernarPlantas.call(this, ordem),
       ordenacoes: [
         { label: "Preço", asc: true, selecionado: true, propriedade: 'preco' },
         { label: "Nome", asc: true, selecionado: false, propriedade: 'name' }
@@ -56,7 +64,6 @@ export default function NossasPlantas() {
     return function(valor) {
       window.clearTimeout(timeoutRef.current);
       timeoutRef.current = window.setTimeout(() => {
-        console.log(valor);
         const newPlantasFiltradas = plantas.filter(planta => planta.preco <= valor);
         setPlantasFiltradas(newPlantasFiltradas);
       }, 500);

@@ -1,4 +1,12 @@
-import { AssinaturaNewsletter, ComoConseguir, ContainerFlex, Menu, NossasPlantas, Page } from "../components";
+import {
+  AssinaturaNewsletter,
+  ComoConseguir,
+  ContainerFlex,
+  Footer,
+  Menu,
+  NossasPlantas,
+  Page
+} from "../components";
 import { Padding } from "../tokens";
 
 
@@ -14,6 +22,7 @@ export default function Home() {
         <NossasPlantas/>
         <Padding size={153} />
       </ContainerFlex>
+      <Footer />
     </Page>
   )
 }

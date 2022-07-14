@@ -30,7 +30,7 @@ export const CardImage = styled.img`
 `;
 
 export const CardContent = styled.div`
-  width: 435px;
+  max-width: 435px;
   padding-top: 58px;
   padding-left: 21px;
   flex-shrink: 0;

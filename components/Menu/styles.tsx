@@ -2,11 +2,16 @@ import styled from "styled-components";
 import { BodyText } from "../../tokens";
 
 export const Header = styled.header`
-height: 48.84px;
 width: 100%;
 display: flex;
 justify-content: space-between;
-align-items: flex-end;
+flex-direction: column;
+
+@media(min-width: ${({theme}) => theme.breakpoints.tablet}px) {
+  height: 50px;
+  flex-direction: row;
+  align-items: flex-end;
+}
 `;
 
 export const Logo = styled.div`
@@ -29,14 +34,24 @@ export const Navigation = styled.nav`
   padding: 0;
   margin: 0;
   display: flex;
+  flex-direction: column;
+  padding-top: 45px;
+
+  @media(min-width: ${({theme})=> theme.breakpoints.phone}px) {
+    padding-top: 0px;
+    flex-direction: row;
+  }
 }
 
 & > ul > ${NavigationItem}:not(:first-of-type) {
   &::before {
-    content: '/';
     color: inherit;
     padding-left: 8px;
     padding-right: 16px;
+
+    @media(min-width: ${({theme})=> theme.breakpoints.phone}px) {
+      content: '/';
+    }
   }
 }
 `;
