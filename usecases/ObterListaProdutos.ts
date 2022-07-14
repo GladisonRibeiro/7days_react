@@ -1,5 +1,7 @@
+import { Planta } from "../entity";
+
 export class ObterListaProdutos {
-  async execute() : Promise<any> {   
+  async execute() : Promise<Planta[]> {
 
     try {
       const headers = new Headers({

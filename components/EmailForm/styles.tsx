@@ -30,7 +30,8 @@ outline: none;
 `;
 
 export const Button = styled.button`
-width: 194px;
+max-width: 100px;
+width: 100%;
 height: 75px;
 display: flex;
 align-items: center;
@@ -50,10 +51,14 @@ border: none;
 &:disabled {
   opacity: 0.6;
 }
+
+@media(min-width: ${({theme}) => theme.breakpoints.tablet}px) {
+  max-width: 194px;
+}
 `;
 
 export const WrapperEmailForm = styled.div`
-min-width: 585px;
+max-width: 585px;
 height: 75px;
 background: #FFFFFF;
 box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06), 0px 0px 15px rgba(0, 0, 0, 0.06);
@@ -62,9 +67,5 @@ align-items: center;
 
 & > ${Input} {
   flex: 1 1 0;
-}
-
-& > ${Button} {
-  flex-shrink: 0;
 }
 `;

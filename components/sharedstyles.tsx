@@ -19,4 +19,35 @@ const ContainerFlex = styled.div`
   z-index: 1;
 `;
 
-export { Page, ContainerFlex }
+
+const Arrow = styled.div`
+  border: solid ${({theme}) => theme.colors.secondary };
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+`;
+const ArrowUp = styled(Arrow)`
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+`;
+const ArrowRight = styled(Arrow)`
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+`;
+const ArrowDown = styled(Arrow)`
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+`;
+const ArrowLeft = styled(Arrow)`
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+`;
+
+export { 
+  Page,
+  ContainerFlex,
+  ArrowUp,
+  ArrowRight,
+  ArrowDown,
+  ArrowLeft
+};

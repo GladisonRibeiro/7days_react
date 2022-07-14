@@ -1,4 +1,4 @@
-import { AssinaturaNewsletter, ComoConseguir, ContainerFlex, Menu, Ofertas, Page } from "../components";
+import { AssinaturaNewsletter, ComoConseguir, ContainerFlex, Menu, NossasPlantas, Page } from "../components";
 import { Padding } from "../tokens";
 
 
@@ -11,7 +11,7 @@ export default function Home() {
         <AssinaturaNewsletter />
         <ComoConseguir />
         <Padding size={44} />
-        <Ofertas/>
+        <NossasPlantas/>
         <Padding size={153} />
       </ContainerFlex>
     </Page>

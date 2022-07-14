@@ -1,20 +1,16 @@
 import emailjs from '@emailjs/browser';
+import { ObterSecrets } from './ObterSecrets';
 
 export class EnviarEmailBoasVindas {
   async execute(email: string) {
     const [name] = email.split('@');
 
     try {
-      const headers = new Headers({
-        "Content-Type": "application/json",
-      });
-      const { data: {
+      const {
         emailjs_token,
         emailjs_welcome_template_id,
         emailjs_welcome_service_id
-      } } = await fetch('/api/secret', { method: "get", headers: headers}).then(function(response) {
-        return response.json();
-      });
+      } = await new ObterSecrets().execute();
       emailjs.init(emailjs_token);
     
       var templateParams = {

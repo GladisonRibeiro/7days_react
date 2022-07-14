@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const WrapperOfertas = styled.div`
   display: flex;
@@ -8,10 +8,17 @@ export const WrapperOfertas = styled.div`
 
 export const WrapperItens = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 200px;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
   gap: 30px;
   width: 100%;
+
+  @media(min-width: ${({theme}) => theme.breakpoints.tablet}px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media(min-width: ${({theme}) => theme.breakpoints.desktop}px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 `;
 
 export const Card = styled.div`
@@ -59,4 +66,25 @@ export const Icon = styled.div`
   width: 18px;
   height: 10px;
   background-image: url(imgs/seta.svg);
+`;
+
+export const WrapperFiltro = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 45px;
+`;
+
+export const SectionFiltro = styled.div`
+  display: flex;
+  align-items: center;
+`
+
+export const OrderItem = styled.div<{selecionado: boolean}>`
+  min-width: 80px;
+  ${(props: any) => props.selecionado && css`
+    color: ${({theme}) => theme.colors.secondary};
+    font-weight: bold;
+  `}
 `;
