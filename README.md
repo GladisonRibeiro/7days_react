@@ -7,6 +7,8 @@ ____
 
 Repositório resultado do desafio [#7DaysOfCode da Alura](https://7daysofcode.io/)
 
+Publicado em: [7days-react.vercel.app](https://7days-react.vercel.app/)
+
 <br/>
 
 ## Objetivo
